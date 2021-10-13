@@ -37,8 +37,10 @@ const Main = () => {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small">Positive</Button>
-                    <Button size="small" color="warning">
+                    <Button variant="contained" size="small" color="primary">
+                      Positive
+                    </Button>
+                    <Button variant="outlined" size="small" color="warning">
                       Negative
                     </Button>
                   </CardActions>
