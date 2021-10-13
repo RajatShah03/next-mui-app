@@ -1,10 +1,12 @@
 import {
   Button,
+  ButtonGroup,
   Card,
   CardActions,
   CardContent,
   CardMedia,
   Container,
+  Divider,
   Grid,
   Paper,
   Typography,
@@ -15,6 +17,26 @@ import React from "react";
 const Main = () => {
   return (
     <Box padding="40px 0">
+      <Container maxWidth="xl">
+        <ButtonGroup variant="contained" aria-label="outlined button group">
+          <Button variant="contained" color="primary">
+            Primary
+          </Button>
+          <Button variant="contained" color="secondary">
+            Secondary
+          </Button>
+          <Button variant="contained" color="success">
+            Success
+          </Button>
+          <Button variant="contained" color="error">
+            Error
+          </Button>
+          <Button variant="contained" color="warning">
+            Warning
+          </Button>
+        </ButtonGroup>
+      </Container>
+      <br />
       <Container maxWidth="xl">
         <Paper style={{ padding: "20px" }}>
           <Grid container spacing={2}>
