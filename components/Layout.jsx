@@ -3,10 +3,6 @@ import {
   CssBaseline,
   Drawer,
   IconButton,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -15,50 +11,9 @@ import React, { useContext, useState } from "react";
 import { Box } from "@mui/system";
 import { DarkMode, LightMode } from "@mui/icons-material";
 import { ModeContext } from "../theme";
+import DrawerMenu from "./DrawerMenu";
 
-export const allThemes = [
-  {
-    name: "Original",
-    color: "#1976d2",
-  },
-  {
-    name: "Teal",
-    color: "#009688",
-  },
-];
-
-const DrawerMenu = (toggle, setTheme) => (
-  <Box
-    sx={{ width: 250, p: 2 }}
-    role="presentation"
-    onClick={toggle}
-    onKeyDown={toggle}
-  >
-    <Typography variant="h6" gutterBottom gutterTop>
-      Choose a theme
-    </Typography>
-    <List>
-      {allThemes.map((theme) => (
-        <ListItem button key={theme.name} onClick={() => setTheme(theme.name)}>
-          <ListItemIcon>
-            <Box
-              sx={{
-                borderRadius: "50%",
-                backgroundColor: theme.color,
-                width: 22,
-                height: 22,
-                overflow: "hidden",
-              }}
-            />
-          </ListItemIcon>
-          <ListItemText primary={theme.name} />
-        </ListItem>
-      ))}
-    </List>
-  </Box>
-);
-
-const Layout = ({ children, setTheme }) => {
+const Layout = ({ children }) => {
   const { mode, toggleMode } = useContext(ModeContext);
   const [open, setOpen] = useState(false);
 
@@ -88,7 +43,7 @@ const Layout = ({ children, setTheme }) => {
         </Toolbar>
       </AppBar>
       <Drawer anchor="left" open={open} onClose={toggleDrawer}>
-        {DrawerMenu(toggleDrawer, setTheme)}
+        <DrawerMenu toggle={toggleDrawer} />
       </Drawer>
       {children}
       <footer>

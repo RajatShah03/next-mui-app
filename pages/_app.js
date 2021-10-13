@@ -11,9 +11,16 @@ function MyApp({ Component, pageProps }) {
   const toggleMode = () => setMode(mode === "light" ? "dark" : "light");
 
   return (
-    <ModeContext.Provider value={{ mode, toggleMode }}>
+    <ModeContext.Provider
+      value={{
+        mode,
+        toggleMode,
+        currentTheme: theme,
+        setCurrentTheme: setTheme,
+      }}
+    >
       <ThemeProvider theme={getTheme(theme, mode)}>
-        <Layout setTheme={setTheme}>
+        <Layout>
           <Component {...pageProps} />
         </Layout>
       </ThemeProvider>

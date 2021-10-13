@@ -14,4 +14,6 @@ export const getTheme = (currentTheme, mode = "light") =>
 export const ModeContext = createContext({
   mode: "light",
   toggleMode: () => {},
+  currentTheme: "Original",
+  setCurrentTheme: () => {},
 });
