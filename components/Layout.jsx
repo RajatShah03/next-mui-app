@@ -39,7 +39,7 @@ const Layout = ({ children }) => {
             Header
           </Typography>
           <IconButton onClick={toggleMode}>
-            {mode === "dark" ? <DarkMode /> : <LightMode />}
+            {mode === "dark" ? <LightMode /> : <DarkMode />}
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -47,7 +47,7 @@ const Layout = ({ children }) => {
         <DrawerMenu toggle={toggleDrawer} />
       </Drawer>
       {children}
-      <footer style={{ position: "fixed", bottom: 0, right: 0, left: 0 }}>
+      <footer style={{ position: "static", bottom: 0, right: 0, left: 0 }}>
         <Box sx={{ borderTop: 0.5, borderColor: "#ddd", p: 2 }}>
           <Typography variant="body2" color="text.secondary" align="center">
             Footer
