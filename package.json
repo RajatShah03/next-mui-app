@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn clean | next build",
     "start": "next start",
+    "clean": "echo Y | rmdir /s .next",
     "lint": "next lint"
   },
   "dependencies": {
@@ -26,7 +27,8 @@
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest"
   },
   "devDependencies": {
-    "eslint": "8.0.0",
+    "babel-plugin-styled-components": "^1.13.2",
+    "eslint": "^8.0.1",
     "eslint-config-next": "11.1.2"
   }
 }
