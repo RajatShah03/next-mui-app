@@ -18,7 +18,11 @@ const Main = () => {
   return (
     <Box padding="40px 0">
       <Container maxWidth="xl">
-        <ButtonGroup variant="contained" aria-label="outlined button group">
+        <ButtonGroup
+          variant="contained"
+          aria-label="outlined button group"
+          sx={{ maxWidth: "100%" }}
+        >
           <Button variant="contained" color="primary">
             Primary
           </Button>
